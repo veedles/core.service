@@ -73,16 +73,15 @@ describe 'Channel API v1' do
       it "returns error when new channel is invalid" do
         header "HTTP_ACCEPT", "application/json"
         expect {
-          put "/api/v1/channels", {}.to_json
+          put "/api/v1/channels", {}
         }.to_not change{Channel.count}
         last_response.status.should == 400
       end
     
       it "creates a valid channel" do
-        pending
         header "HTTP_ACCEPT", "application/json"
         expect {
-          put "/api/v1/channels", {:name => 'New Channel'}.to_json
+          put "/api/v1/channels", {:name => 'New Channel'}
         }.to change{Channel.count}
 
         last_response.should be_ok
