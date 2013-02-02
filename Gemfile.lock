@@ -111,7 +111,7 @@ DEPENDENCIES
   grape
   pg
   rack-test
-  rake (~> 10.0.2)
+  rake (~> 10.0.3)
   require_all
   rspec
   sqlite3
