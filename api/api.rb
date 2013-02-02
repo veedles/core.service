@@ -5,7 +5,7 @@ class API < Grape::API
   end
   
   http_basic do |username, password|
-    access_key = ENV['RESTFUL_ACCESS_KEY']
+    access_key = ENV['RESTPACK_ACCESS_KEY']
     raise 'service access key not set' unless access_key
     
     password == access_key
