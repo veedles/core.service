@@ -7,10 +7,19 @@ A REST API for configuring channels, domains and websites.
 ```
 bundle exec rake db:migrate
 bundle exec rake db:dev_seed
-
-rake start
 ```
 
+## Running Tests
+
+```
+rake test
+```
+
+## Running the Service
+
+```
+rake start
+```
 The service will be available at http://localhost:1111/
 
 ## Service Endpoints:
