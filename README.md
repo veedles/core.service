@@ -8,7 +8,7 @@ A REST API for configuring channels, applications and domains.
 
 **Domains** are the endpoints to your application. Some examples are 'www.rubyjobs.io', 'api.rubyjobs.io', 'auth.rubyjobs.io'.
 
-**Configurations** are key => values which can belong to a Channel, Website, Domain or be global. The key is a string such as 'omniauth' and the value can be any JSON structure.
+**Configurations** are key => values which can belong to a Channel, Application, Domain or be global. The key is a string such as 'omniauth' and the value can be any JSON structure.
 
 ## Developer Environment Setup
 
