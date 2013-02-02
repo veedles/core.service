@@ -1,4 +1,4 @@
-# RESTful core.service
+# RESTpack core.service
 
 A REST API for configuring channels, applications and domains.
 
