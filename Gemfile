@@ -20,6 +20,7 @@ group :development do
   gem 'rake', '~> 10.0.2'
   gem 'sqlite3'
   gem 'dm-sqlite-adapter'
+  gem 'foreman'
 end
 
 group :production do
