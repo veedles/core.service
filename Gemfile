@@ -11,9 +11,18 @@ gem 'dm-serializer'
 
 gem 'require_all'
 
+group :test, :development do
+  gem 'pry'
+  gem 'pry-debugger'
+  gem 'pry-remote'
+  gem 'pry-debugger'
+  gem 'pry-stack_explorer'
+end
+
 group :test do
   gem 'rspec', :require => 'spec'
   gem 'rack-test'
+  gem 'dm-rspec2'
 end
 
 group :development do
