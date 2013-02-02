@@ -9,11 +9,11 @@ class Configuration
   validates_presence_of :value
   
   belongs_to :channel, :required => false
-  belongs_to :website, :required => false
+  belongs_to :application, :required => false
   belongs_to :domain, :required => false
   
   def self.root
-    all(channel_id: nil, website_id: nil, domain_id: nil)
+    all(channel_id: nil, application_id: nil, domain_id: nil)
   end
   
   class Entity < Grape::Entity

@@ -1,10 +1,10 @@
 # RESTful core.service
 
-A REST API for configuring channels, domains and websites.
+A REST API for configuring channels, applications and domains.
 
-**Channels** are a way of partitioning your users and data. You may have one channel called 'Coffee Roulette App' and another called 'Tech Jobs Websites'. Channels can contain multiple websites.
+**Channels** are a way of partitioning your users and data. You may have one channel called 'Coffee Roulette App' and another called 'Tech Jobs Websites'. Channels can contain multiple applications and these will share data such as user accounts etc.
 
-**Websites** have names such as 'Ruby Jobs', 'Python Jobs' and 'Coffee Roulette'. They belong to a channel and can have multiple domains.
+**Applications** have names such as 'Ruby Jobs', 'Python Jobs' and 'Coffee Roulette'. They belong to a channel and can have multiple domains.
 
 **Domains** are the endpoints to your application. Some examples are 'www.rubyjobs.io', 'api.rubyjobs.io', 'auth.rubyjobs.io'.
 
@@ -13,8 +13,8 @@ A REST API for configuring channels, domains and websites.
 ## Developer Environment Setup
 
 ```
-bundle exec rake db:migrate
-bundle exec rake db:dev_seed
+rake db:migrate
+rake db:dev_seed
 ```
 
 ## Running Tests

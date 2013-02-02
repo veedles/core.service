@@ -6,11 +6,11 @@ class Domain
   
   validates_presence_of :identifier
   
-  belongs_to :website
+  belongs_to :application
   has n, :configurations
   
   class Entity < Grape::Entity
-    expose :id, :identifier, :config, :website_id
+    expose :id, :identifier, :config, :application_id
     expose :configurations, :using => Configuration::Entity
   end
 end

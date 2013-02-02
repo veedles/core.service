@@ -6,12 +6,12 @@ class Channel
   
   validates_presence_of :name
   
-  has n, :websites
+  has n, :applications
   has n, :configurations
   
   class Entity < Grape::Entity
     expose :id, :name
-    expose :websites, :using => Website::Entity
+    expose :applications, :using => Application::Entity
     expose :configurations, :using => Configuration::Entity
   end
 end

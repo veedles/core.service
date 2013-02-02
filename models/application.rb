@@ -1,4 +1,4 @@
-class Website
+class Application
   include DataMapper::Resource
   property :id, Serial
   property :name, String, :length => 128

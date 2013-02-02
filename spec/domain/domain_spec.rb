@@ -3,8 +3,8 @@ require 'spec_helper'
 describe Domain do
   before(:each) do
     @channel = Channel.create name: 'Channel'
-    @website = Website.create name: 'Website', channel: @channel
-    @domain = Domain.new identifier: 'www.rubyjobs.ie', website: @website
+    @application = Application.create name: 'Application', channel: @channel
+    @domain = Domain.new identifier: 'www.rubyjobs.ie', application: @application
   end
 
   specify 'is valid' do
