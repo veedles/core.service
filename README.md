@@ -33,7 +33,7 @@ The service will be available at http://localhost:1111/
 
 ## Service Endpoints:
 
-(password is '1234')
+(password is '1234', username can be anything, to log out just visit http://foo@localhost:1111/)
 
 1. http://localhost:1111/api/v1/channels.json
 2. http://localhost:1111/api/v1/domains.json
