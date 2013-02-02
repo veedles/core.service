@@ -64,7 +64,7 @@ describe 'Channel API v1' do
     end
   end
 
-  describe 'put' do
+  describe 'post' do
     describe 'with valid credentials' do
       before(:each) do
         authorize '', '1234'
@@ -73,7 +73,7 @@ describe 'Channel API v1' do
       it "returns error when new channel is invalid" do
         header "HTTP_ACCEPT", "application/json"
         expect {
-          put "/api/v1/channels", {}
+          post "/api/v1/channels", {}
         }.to_not change{Channel.count}
         last_response.status.should == 400
       end
@@ -81,10 +81,10 @@ describe 'Channel API v1' do
       it "creates a valid channel" do
         header "HTTP_ACCEPT", "application/json"
         expect {
-          put "/api/v1/channels", {:name => 'New Channel'}
+          post "/api/v1/channels", {:name => 'New Channel'}
         }.to change{Channel.count}
 
-        last_response.should be_ok
+        last_response.status.should == 201
         channel = JSON.parse last_response.body
       
         channel['id'].should == @second_channel.id + 1

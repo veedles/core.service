@@ -19,7 +19,7 @@ module ChannelAPI
         end
       end
       
-      put do
+      post do
         channel = Channel.create(name: params['name'])
         
         if channel.valid?
@@ -28,7 +28,6 @@ module ChannelAPI
           error!({:error => 'Invalid request'}, 400)
         end
       end
-      
     end
   end
 end
