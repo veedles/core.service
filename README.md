@@ -13,6 +13,7 @@ A REST API for configuring channels, applications and domains.
 ## Developer Environment Setup
 
 ```
+bundle install
 rake db:migrate
 rake db:dev_seed
 ```
