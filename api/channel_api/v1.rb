@@ -1,6 +1,6 @@
 module ChannelAPI
   class V1 < Grape::API
-    version 'v1', :using => :path, :vendor => 'RESTful', :format => :json
+    version 'v1', :using => :path, :vendor => 'RESTpack', :format => :json
 
     resource :channels do
       get do        

@@ -1,6 +1,6 @@
 module ConfigurationAPI  
   class V1 < Grape::API
-    version 'v1', :using => :path, :vendor => 'RESTful', :format => :json
+    version 'v1', :using => :path, :vendor => 'RESTpack', :format => :json
 
     resource :configuration do
       get :all do        
