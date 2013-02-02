@@ -10,7 +10,7 @@ A REST API for configuring channels, applications and domains.
 
 **Configurations** are key => values which can belong to a Channel, Application, Domain or be global. The key is a string such as 'omniauth' and the value can be any JSON structure.
 
-[![Build Status](https://api.travis-ci.org/RESTpack/core.service.png)](https://travis-ci.org/RESTpack/core.service])
+[![Build Status](https://travis-ci.org/RESTpack/core.service.png)](https://travis-ci.org/RESTpack/core.service)
 
 ## Developer Environment Setup
 
