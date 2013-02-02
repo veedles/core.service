@@ -1,4 +1,4 @@
-# RESTFul core.service
+# RESTful core.service
 
 A REST API for configuring channels, domains and websites.
 
