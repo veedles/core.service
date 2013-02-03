@@ -1,20 +1,24 @@
 require 'spec_helper'
 
 describe Domain do
-  before(:each) do
-    @channel = Channel.create name: 'Channel'
-    @application = Application.create name: 'Application', channel: @channel
-    @domain = Domain.new identifier: 'www.rubyjobs.ie', application: @application
-  end
+  it { should validate_presence_of(:identifier) }
+  it { should belong_to(:application) }
+ 
+  context 'when creating' do
+    let(:channel) { Channel.create name: 'Channel' }
+    let(:application) { Application.create name: 'Application', channel: channel }
 
-  specify 'is valid' do
-    @domain.should be_valid
-  end
-  
-  specify 'identifier is required' do
-    @domain.identifier = nil
-    @domain.should_not be_valid
-    @domain.errors[:identifier].should include("Identifier must not be blank")
+    context 'a valid domain' do
+      subject(:domain) { Domain.create identifier: 'www.rubyjobs.ie', application: application }
+      it {should be_saved}
+    end
+
+    context 'a domain with too long an identifier' do
+      subject(:domain) { Domain.create identifier: 'x' * 513 }
+      it {should_not be_saved}
+      it 'should have a identifier too long error' do
+        domain.errors[:identifier].should include("Identifier must be at most 512 characters long")
+      end
+    end
   end
 end
-

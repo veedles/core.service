@@ -1,19 +1,23 @@
 require 'spec_helper'
 
 describe Application do
-  before(:each) do
-    @channel = Channel.create name: 'Channel'
-    @application = Application.new name: 'Application', channel: @channel
-  end
+  it { should validate_presence_of(:name) }
+  it { should belong_to(:channel) }
+ 
+  context 'when creating' do
+    let(:channel) { Channel.create name: 'Channel' }
 
-  specify 'is valid' do
-    @application.should be_valid
-  end
-  
-  specify 'name is required' do
-    @application.name = nil
-    @application.should_not be_valid
-    @application.errors[:name].should include("Name must not be blank")
+    context 'a valid application' do
+      subject(:application) { Application.create name: 'Application', channel: channel }
+      it {should be_saved}
+    end
+
+    context 'an application with too long a name' do
+      subject(:application) { Application.create name: 'x' * 129 }
+      it {should_not be_saved}
+      it 'should have a name too long error' do
+        application.errors[:name].should include("Name must be at most 128 characters long")
+      end
+    end
   end
 end
-
