@@ -1,18 +1,21 @@
 require 'spec_helper'
 
 describe Channel do
-  before(:each) do
-    @channel = Channel.new(name: 'Ruby Jobs')
-  end
+  it { should validate_presence_of(:name) }
 
-  specify 'is valid' do
-    @channel.should be_valid
-  end
-  
-  specify 'name is required' do
-    @channel.name = nil
-    @channel.should_not be_valid
-    @channel.errors[:name].should include("Name must not be blank")
+  context 'when creating' do
+
+    context 'a valid channel' do
+      subject(:channel) { Channel.create name: 'Ruby Jobs' }
+      it {should be_saved}
+    end
+
+    context 'a channel with too long a name' do
+      subject(:channel) { Channel.create name: 'x' * 513 }
+      it {should_not be_saved}
+      it 'should have a name too long error' do
+        channel.errors[:name].should include("Name must be at most 512 characters long")
+      end
+    end
   end
 end
-
