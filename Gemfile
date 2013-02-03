@@ -1,12 +1,10 @@
 source :rubygems
-gem 'grape'
-
+gem 'grape', '~> 0.2.6'
 gem 'datamapper', '~> 1.2.0'
-
-gem 'require_all'
+gem 'require_all', '~> 1.2.1'
 
 group :test, :development do
-  gem 'pry'
+  gem 'pry', '~> 0.9.11.4'
   gem 'pry-debugger'
   gem 'pry-remote'
   gem 'pry-debugger'
@@ -23,10 +21,10 @@ group :development do
   gem 'rake', '~> 10.0.3'
   gem 'sqlite3'
   gem 'dm-sqlite-adapter'
-  gem 'foreman'
+  gem 'foreman', '~> 0.61.0'
 end
 
 group :production do
-  gem 'pg'
-  gem 'dm-postgres-adapter'
+  gem 'pg', '~> 0.14.1'
+  gem 'dm-postgres-adapter', '~> 1.2.0'
 end
