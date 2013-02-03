@@ -1,4 +1,4 @@
-# RESTpack core.service [![Build Status](https://travis-ci.org/RESTpack/core.service.png)](https://travis-ci.org/RESTpack/core.service)
+# RESTpack core.service [![Build Status](https://travis-ci.org/RESTpack/core.service.png)](https://travis-ci.org/RESTpack/core.service) [![Dependency Status](https://gemnasium.com/RESTpack/core.service.png)](https://gemnasium.com/RESTpack/core.service)
 
 A REST API for configuring channels, applications and domains.
 
