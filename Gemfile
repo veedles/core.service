@@ -1,13 +1,7 @@
 source :rubygems
 gem 'grape'
 
-gem 'dm-core'
-gem 'dm-timestamps'
-gem 'dm-validations'
-gem 'dm-aggregates'
-gem 'dm-migrations'
-gem 'dm-types'
-gem 'dm-serializer'
+gem 'datamapper', '~> 1.2.0'
 
 gem 'require_all'
 
