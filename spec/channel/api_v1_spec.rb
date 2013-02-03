@@ -6,7 +6,7 @@ describe 'Channel API v1' do
   let(:app) { App.new }
   
   before(:each) do
-    ENV['RESTFUL_ACCESS_KEY'] = '1234'
+    ENV['RESTPACK_ACCESS_KEY'] = '9999'
     Channel.destroy
 
     @first_channel = Channel.create(name: 'Ruby Jobs')
@@ -35,7 +35,7 @@ describe 'Channel API v1' do
     
     describe 'with valid credentials' do
       before(:each) do
-        authorize '', '1234'
+        authorize '', '9999'
       end
       
       it 'lists all channels' do
@@ -67,7 +67,7 @@ describe 'Channel API v1' do
   describe 'post' do
     describe 'with valid credentials' do
       before(:each) do
-        authorize '', '1234'
+        authorize '', '9999'
       end
       
       it "returns error when new channel is invalid" do
