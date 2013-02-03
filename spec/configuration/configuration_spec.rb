@@ -26,6 +26,9 @@ describe Configuration do
     subject(:configuration) { Configuration.create name: 'app_config', application: application,
         value: { :num_instances => 3}}
     it {should be_saved}
+    it "should have the application" do
+      configuration.reload.application.should == application
+    end
     it "should not be returned by Configuration.root" do
       Configuration.root.should_not include(configuration)
     end
@@ -38,6 +41,9 @@ describe Configuration do
     subject(:configuration) { Configuration.create name: 'domain_config', domain: domain,
         value: { :max_users => 200, :name_format => "<firstname> <surname>" }}
     it {should be_saved}
+    it "should have the domain" do
+      configuration.reload.domain.should == domain
+    end
     it "should not be returned by Configuration.root" do
       Configuration.root.should_not include(configuration)
     end
