@@ -19,8 +19,8 @@ end
 
 group :development do
   gem 'rake', '~> 10.0.3'
-  gem 'sqlite3'
-  gem 'dm-sqlite-adapter'
+  gem 'sqlite3', '~> 1.3.7'
+  gem 'dm-sqlite-adapter', '~> 1.2.0'
   gem 'foreman', '~> 0.61.0'
 end
 
